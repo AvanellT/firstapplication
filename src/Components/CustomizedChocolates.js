@@ -46,7 +46,7 @@ function CustomizedChocolates() {
                          <p>Dark Chocolate Vegan Bars
                             <br></br>
                             $150.00 per dozen</p></th>
-                    <th> <a href="Chocolateitem8">
+                    <th> <a href="Chocolateitem8"> 
                         <img src="../images/Chocolateitem8.jpeg " height="100px" width="100px" /></a>
                         <p> Chocolate Bars with Crisp
                             <br></br>
