@@ -6,7 +6,7 @@ const Menu = () => {
         <div className="topNav">
             <NavLink className="topNavA" to="/">Home</NavLink>
             <NavLink className="topNavA" to="/AboutUs">About Us</NavLink>
-            <NavLink className="topNavA" to="/CustomizedChocolates">Customized Chocolates</NavLink>
+            <NavLink className="topNavA" to="/LocalStore">Local Store</NavLink>
             <NavLink className="topNavA" to="/contact">Contact</NavLink>
         </div>
     );

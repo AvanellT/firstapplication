@@ -14,6 +14,10 @@ import Chocolateitem5 from "./Chocolateitem5";
 import Chocolateitem6 from "./Chocolateitem6";
 import Chocolateitem7 from "./Chocolateitem7";
 import Chocolateitem8 from "./Chocolateitem8";
+import LocalStore from "./LocalStore";
+import Details from "./details";
+import Checkout from "./Checkout";
+
 
 const Paths = () => {
     return (
@@ -32,6 +36,10 @@ const Paths = () => {
                 <Route path="/Chocolateitem6" element={<Chocolateitem6/>}/>
                 <Route path="/Chocolateitem7" element={<Chocolateitem7/>}/>
                 <Route path="/Chocolateitem8" element={<Chocolateitem8/>}/>
+                <Route path="/localstore" element={<LocalStore/>}/>
+                <Route path="/details" element={<Details />} />
+                <Route path="/Checkout" element={<Checkout />} />
+                
                 
 
 
