@@ -13,7 +13,11 @@ import React from "react";
 
              <h2>Dana Jessop</h2>
               <p>CEO & Founder</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>Dana has been an avid lover of creating new experience with Chocolate pieces. 
+                She created her first chocolate bar at the age of 9 years old and have continuously 
+                been searching for new ways to recreate persons experience with chocolate. After many decades of
+                experimenting, Dana founded Dana Delish Delights and has sold dozens of customized chocolates to customers worldwide.
+              </p>
               <p>Danajessop@gmail.com</p>
          </div>
      );

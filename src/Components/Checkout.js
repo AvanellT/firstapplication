@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import '../style/checkout.css';
 
 export default function Checkout() {
+    const [PriceArray, setPriceArray] = useState([]);
 
     const getCartTotal = () => {
         var PriceArray = JSON.parse(localStorage.getItem('Checkout Prices') || '[]');
@@ -14,19 +15,45 @@ export default function Checkout() {
 
         for (i in PriceArray) {
             total += PriceArray[i];
+            //total = total + PriceArray[i];
         }
-        return (<p>Total <span class="price" color="black"><b>{total}</b></span></p>);
+        return (<p>Total <span className="price" color="black"><b>{total}</b></span></p>);
     }
 
     const prices = JSON.parse(localStorage.getItem('Checkout Prices') || '[]');
 
+    const removeAll = () => {
+        localStorage.removeItem('Checkout Prices')
+    }
+
+    const removeItem = price => {
+        //get the array from localstorage and save to local array PricesArray
+       /*  var PA = JSON.parse(localStorage.getItem('Checkout Prices') || '[]');
+        setPriceArray(PA);
+ */
+        //filter value to be removed from local array
+        /* console.log(PA);
+        console.log(PriceArray);
+        console.log(price);
+         console.log(PriceArray.filter((priceA) => priceA !== price)); */
+        //setPriceArray(PriceArray.filter((priceA) => priceA !== price));
+
+        //save new array to local storage
+        localStorage.setItem('Checkout Prices', JSON.stringify(PriceArray.filter((priceA) => priceA !== price)));
+    }
+
+    useEffect(() => {
+        var PA = JSON.parse(localStorage.getItem('Checkout Prices') || '[]');
+        setPriceArray(PA);
+    }, [PriceArray]);
+
     return (
         <>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-8">
                         <form action="">
-                            <table class="table">
+                            <table className="table">
                                 <tr>
                                     <td>
                                         <h3>Billing Address</h3>
@@ -45,11 +72,11 @@ export default function Checkout() {
                                         <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" />
                                         <label for="expmonth">Exp Month</label>
                                         <input type="text" id="expmonth" name="expmonth" placeholder="September" />
-                                        <div class="">
+                                        <div className="">
                                             <label for="expyear">Exp Year</label>
                                             <input type="text" id="expyear" name="expyear" placeholder="2018" />
                                         </div>
-                                        <div class="">
+                                        <div className="">
                                             <label for="cvv">CVV</label>
                                             <input type="text" id="cvv" name="cvv" placeholder="352" />
                                         </div>
@@ -59,20 +86,39 @@ export default function Checkout() {
                             <label>
                                 <input type="checkbox" checked="checked" name="sameadr" /> Shipping address same as billing
                             </label>
-                            <input type="submit" value="Continue to checkout" class="btn" />
+                            
                         </form>
                     </div>
 
-                    <div class="col-lg-4">
-                        <h4>Cart <span class="price" color="black"><i class="fa fa-shopping-cart"></i> <b>{getCartTotal()}</b></span></h4>
+                    <div className="col-lg-4">
+                        <h4>Cart Items </h4>
                         {prices.map((price) => {
-                            return (<p>Product 1<span class="price">{price}</span></p>);
-                        })}
+                            return (
+                                <div>
+                                    <p>Item
+                                        <span className="price">{price}
+                                        </span>
+                                    </p>
+                                    <button onClick={() => removeItem(price)}>X</button>
 
+                                </div>
+                            );
+                        })}
+                        <button onClick={() => removeAll()}>Remove All</button>
+
+
+                    </div>
+                    <div className="col-lg-2">
+
+                    </div>
+                    <div className="col-lg-6">
+                        <h4>Order Summary</h4>
+                        <p><b>{getCartTotal()}</b> Item(s)</p>
                         <hr />
-                        {/* <p>Total <span class="price" color="black"><b>{getTotal}</b></span></p> */}
+                        {/* <p>Total <span className="price" color="black"><b>{getTotal}</b></span></p> */}
                         {getTotal()}
                     </div>
+                    <input type="submit" value="Place Order" className="btn" onClick={() => alert("Order made. Info Sent")}/>
                 </div>
             </div>
         </>

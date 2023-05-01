@@ -37,7 +37,7 @@ function LocalStore(props) {
     return (
         <>
             <div className="App">
-                <h1>Setting Local Storage</h1>
+            {/*    <h1>Setting Local Storage</h1>
                 <div className="addTask">
                     <input
                         placeholder="Enter Name"
@@ -51,7 +51,7 @@ function LocalStore(props) {
                     <p>Name: {localStorage.getItem('Name')}</p>
                     <br />
                     <button onClick={remove}>Remove</button>
-                </div>
+    </div>*/}
             </div>
             <div className="container">
                 <div className="row">

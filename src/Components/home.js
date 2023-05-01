@@ -7,11 +7,11 @@ import "../style/style.css"
              <h1> Diana Delish Delights </h1>
  
   <h2> Come taste our uniquely handmade delights! </h2>
-   <img src="../images/candybars.jpeg " height="100px" width="100px"/>
-   <img src="../images/customchocolate.webp " height="100px" width="100px"/>
-   <img src="../images/Chocolatecrunch.webp " height="100px" width="100px"/>
-   <img src="../images/Chocolatebar.jpeg " height="100px" width="100px"/>
-   <img src="../images/Chocolatebar2.jpeg " height="100px" width="100px"/>
+   <img src="../images/candybars.jpeg " alt="image"/>
+   <img src="../images/customchocolate.webp "/>
+   <img src="../images/Chocolatecrunch.webp "/>
+   <img src="../images/Chocolatebar.jpeg "/>
+   <img src="../images/Chocolatebar2.jpeg "/>
 <br></br>
 <p>Diana Delish Delights has been working year after year to create amazing moments of joy and delight!
 For over 30 years we have specialized in the purest, most decadent chocolate products available.
